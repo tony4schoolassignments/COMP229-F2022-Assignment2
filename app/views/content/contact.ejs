@@ -1,0 +1,80 @@
+<!--
+    COMP229-401 Fall 2022
+    Assignment 2 - Express Portfolio – Authentication 
+    Date: October 21, 2022
+
+    Author: Junesik (Tony) Han
+    Student #: 301252900
+
+    Filename: contact.ejs
+-->
+<div class="container">
+    <h1><%= title %></h1>
+    <section class="formCenter">
+        <p class="text2">
+            My Contact Info
+        </p>
+        <hr>
+        <p class="text1"><strong>Phone: </strong>647-423-8453</p>
+        <p class="text1"><strong>Email: </strong>tonyhan123@gmail.com</p>
+        <hr>
+        <p class="text2">
+            Have any inquiries? Please fill out the form below.
+        </p>
+        <hr>
+        <div class="table">
+            <form action="/home">
+                <table style="width: 100%">
+                    <tr>
+                        <td class="form1">
+                            <label for="firstName"><strong>First Name:</strong></label>
+                        </td>
+                        <td class="form2">
+                            <input id="firstName" name="txtFirstName" size="50" type="text" tabindex="1" required="required" placeholder="first name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form1">
+                            <label for="lastName"><strong>Last Name:</strong></label>
+                        </td>
+                        <td class="form2">
+                            <input id="lastName" name="txtLastName" size="50" type="text" tabindex="2" required="required" placeholder="last name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form1">
+                            <label for="email"><strong>Email:</strong></label>
+                        </td>
+                        <td class="form2">
+                            <input id="email" name="txtEmail" size="50" type="email" tabindex="3" required="required" placeholder="account@domain.com">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form1">
+                            <label for="phonenumber"><strong>Phone number:</strong></label>
+                        </td>
+                        <td class="form2">
+                            <input id="phonenumber" name="txtPhone" size="50" type="text" tabindex="4" required="required" placeholder="123-456-7890">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form1">
+                            <label for="txtMessage"><strong>Message:</strong></label>
+                        </td>
+                        <td class="form2">
+                            <textarea name="txtMessage" tabindex="7" placeholder="Type your message here."></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form1">
+                            <input id="btn" name="btnSubmit" type="submit" value="Send Information" tabindex="8">
+                        </td>
+                        <td class="form2">
+                            <input id="btn" name="btnReset" type="reset" value="Clear Form" tabindex="9">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+</div>
