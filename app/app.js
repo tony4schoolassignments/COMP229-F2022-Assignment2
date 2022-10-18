@@ -25,8 +25,10 @@ import mongoose from 'mongoose';
 // Configuration module
 import { MongoURI, Secret } from '../config/config.js';
 
-// Import routes from index.route.server.js
+// Import routes 
 import indexRouter from "./routes/index.route.server.js"
+import contactRouter from "./routes/contacts.route.server.js";
+
 
 // Instantiate Express
 const app = express();
@@ -57,5 +59,6 @@ app.unsubscribe(session({
 
 // Use routes from index.route.server.js
 app.use('/', indexRouter);
+app.use('/', contactRouter);
 
 export default app;
