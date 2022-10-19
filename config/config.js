@@ -9,4 +9,4 @@
     Filename: config.js
 */
 export const Secret = "MySecret";
-export const MongoURI = "mongodb+srv://tony:tony123@comp229-f2022-assignmen.oxlcqvd.mongodb.net/assignment2?retryWrites=true&w=majority";
+export const MongoURI = "mongodb+srv://tony4comp229:randompassword123@comp229-f2022-tony-3012.zvsporp.mongodb.net/assignment2?retryWrites=true&w=majority";
