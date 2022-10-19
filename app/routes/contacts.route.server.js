@@ -10,12 +10,16 @@
 */
 import { Router } from "express";
 
-import { DisplayContactList } from "../controllers/contacts.controller.server.js";
+import { DisplayContactsAddPage, DisplayContactsList, ProcessContactsAddPage,
+        DisplayContactsUpdatePage, ProcessContactsUpdatePage, ProcessContactsDelete } from "../controllers/contacts.controller.server.js";
 
 const router = Router();
 
-router.get('/');
-
-router.get('/contact-list', DisplayContactList);
+router.get('/contact-list', DisplayContactsList);
+router.get('/contact-add', DisplayContactsAddPage)
+router.post('/contact-add', ProcessContactsAddPage);
+router.get('/contact-update/:id', DisplayContactsUpdatePage);
+router.post('/contact-update/:id', ProcessContactsUpdatePage);
+router.get('/contact-delete/:id', ProcessContactsDelete);
 
 export default router;

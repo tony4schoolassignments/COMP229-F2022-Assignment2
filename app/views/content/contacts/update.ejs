@@ -1,0 +1,58 @@
+<!--
+    COMP229-401 Fall 2022
+    Assignment 2 - Express Portfolio – Authentication 
+    Date: October 21, 2022
+
+    Author: Junesik (Tony) Han
+    Student #: 301252900
+
+    Filename: update.ejs
+-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <input type="hidden" name="id" value="<%= contact._id %>" >
+                <div class="form-group">
+                    <label for="nameTextField">Contact Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Contact Name"
+                    name="name" 
+                    value="<%= contact.name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Contact Number</label>
+                    <input type="text" class="form-control"
+                    id="numberTextField"
+                    placeholder="Enter the Contact Number"
+                    name="number" 
+                    value="<%= contact.number %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Contact Email</label>
+                    <input type="text" class="form-control"
+                    id="emailTextField"
+                    placeholder="Enter the Contact Email"
+                    name="emailAddress" 
+                    value="<%= contact.emailAddress %>"
+                    required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/contact-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>

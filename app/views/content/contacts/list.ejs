@@ -1,3 +1,13 @@
+<!--
+    COMP229-401 Fall 2022
+    Assignment 2 - Express Portfolio – Authentication 
+    Date: October 21, 2022
+
+    Author: Junesik (Tony) Han
+    Student #: 301252900
+
+    Filename: list.ejs
+-->
 <div class="container">
     <h1>Business Contact List</h1>
     <a href="/contact-add" class="btn btn-primary" role="button">
@@ -26,7 +36,7 @@
                             <td><%= contacts[count].emailAddress %></td>
                             
                             <td class="text-center col-1">
-                                <a href="/contact-edit/<%= contacts[count]._id %>"
+                                <a href="/contact-update/<%= contacts[count]._id %>"
                                     class="btn btn-primary btn-sm">
                                     <i class="fas fa-pencil-alt"></i> Update</a>
                             </td>
