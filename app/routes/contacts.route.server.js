@@ -11,15 +11,18 @@
 import { Router } from "express";
 
 import { DisplayContactsAddPage, DisplayContactsList, ProcessContactsAddPage,
-        DisplayContactsUpdatePage, ProcessContactsUpdatePage, ProcessContactsDelete } from "../controllers/contacts.controller.server.js";
+        DisplayContactsUpdatePage, ProcessContactsUpdatePage, 
+        ProcessContactsDelete } from "../controllers/contacts.controller.server.js";
+
+import { AuthGuard } from "../utils/index.js";
 
 const router = Router();
 
-router.get('/contact-list', DisplayContactsList);
-router.get('/contact-add', DisplayContactsAddPage)
-router.post('/contact-add', ProcessContactsAddPage);
-router.get('/contact-update/:id', DisplayContactsUpdatePage);
-router.post('/contact-update/:id', ProcessContactsUpdatePage);
-router.get('/contact-delete/:id', ProcessContactsDelete);
+router.get('/contact-list', AuthGuard,  DisplayContactsList);
+router.get('/contact-add', AuthGuard, DisplayContactsAddPage)
+router.post('/contact-add', AuthGuard, ProcessContactsAddPage);
+router.get('/contact-update/:id', AuthGuard, DisplayContactsUpdatePage);
+router.post('/contact-update/:id', AuthGuard, ProcessContactsUpdatePage);
+router.get('/contact-delete/:id', AuthGuard, ProcessContactsDelete);
 
 export default router;

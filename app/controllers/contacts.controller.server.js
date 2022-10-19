@@ -9,6 +9,7 @@
     Filename: contacts.controller.server.js
 */
 import contactModel from '../models/contacts.js';
+import { userDisplayName } from '../utils/index.js';
 
 export function DisplayContactsList(req, res, next){
     contactModel.find(function(err, contactsCollection){
@@ -16,12 +17,12 @@ export function DisplayContactsList(req, res, next){
             console.error(err);
             res.end(err);
         };
-        res.render('index', {title: 'Business Contacts List', page: 'contacts/list', contacts: contactsCollection})
+        res.render('index', {title: 'Business Contacts List', page: 'contacts/list', contacts: contactsCollection, displayName: userDisplayName(req)})
     });
 };
 
 export function DisplayContactsAddPage(req, res, next){
-    res.render('index', {title: 'Add Contact', page: 'contacts/update', contact: {}});
+    res.render('index', {title: 'Add Contact', page: 'contacts/update', contact: {}, displayName: userDisplayName(req)});
 };
 
 export function ProcessContactsAddPage(req, res, next){
@@ -47,7 +48,7 @@ export function DisplayContactsUpdatePage(req, res, next){
             console.error(err);
             res.end(err);
         }
-        res.render('index', {title: 'Update Contact', page: 'contacts/update', contact: contact});
+        res.render('index', {title: 'Update Contact', page: 'contacts/update', contact: contact, displayName: userDisplayName(req)});
     });  
 };
 

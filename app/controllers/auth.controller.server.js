@@ -20,14 +20,14 @@ import { userDisplayName } from '../utils/index.js';
 // Display Function
 export function DisplayLoginPage(req, res, next){
     if(!req.user){
-        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage')})
+        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: userDisplayName(req)})
     };
     return res.redirect('/contact-list');
 };
 
 export function DisplayRegisterPage(req, res, next){
     if(!req.user){
-        return res.render('index', {title: 'Register', page: 'register', messages: req.flash('registerMessage')})
+        return res.render('index', {title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: userDisplayName(req)})
     };
     return res.redirect('/contact-list');
 };
@@ -48,7 +48,7 @@ export function ProcessLoginPage(req, res, next){
                 console.error(err);
                 res.end(err);
             };
-            return res.redirect('/');
+            return res.redirect('/contact-list');
         });
     })(req, res, next);
 };
