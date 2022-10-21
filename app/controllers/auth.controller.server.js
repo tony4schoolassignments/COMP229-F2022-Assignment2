@@ -77,7 +77,7 @@ export function ProcessRegisterPage(req, res, next){
         };
         // if no error
         return passport.authenticate('local')(req, res, function(){
-            return res.redirect('/');
+            return res.redirect('/contact-list');
         });
     });
 };
