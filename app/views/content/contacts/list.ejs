@@ -55,13 +55,25 @@
     </div>
 </div>
 <script>
+    /* 
+    Sorting function for contact list table
+    Source: https://stackoverflow.com/a/65523219 
+    */
     const tbody = document.getElementById("contactList");
-    function tableSort(colNum, cmp) {
+
+    // function to sort given a column number and a comparator
+    function tableSort(colNum, comparator) {
         let rows = [...tbody.rows];
-        rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent)).map(row => tbody.appendChild(row));
+        rows.sort((a, b) => comparator(a.cells[colNum].textContent, b.cells[colNum].textContent)).map(row => tbody.appendChild(row));
     };
+
     function sortName() {
+        // call helper function tableSort with column 0 (Contact Name column)
+        // localeCompare compares 2 strings and returns sort order -1, 1, or 0 
+        // indicating whether a reference string comes before, or after, or is the same as the given string in sort order.
         tableSort(0, (a, b) => a.localeCompare(b)); 
     };
+
+    // call sort function when page loads
     window.onload = sortName;
 </script>
