@@ -13,6 +13,7 @@ import passportLocalMongoose from 'passport-local-mongoose';
 const { PassportLocalSchema } = mongoose;
 const Schema = mongoose.Schema;
 
+// user object in our database. it has 3 properties: displayname, username and email address
 const UserSchema = new Schema({
     displayName: String,
     username: String,

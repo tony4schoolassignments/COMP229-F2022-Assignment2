@@ -18,7 +18,11 @@ import { AuthGuard } from "../utils/index.js";
 
 const router = Router();
 
+// wiring path /contact-list to function DisplayContactsList that will render the page
+// AuthGuard is function that prevents unauthorized users to accesing this path.
 router.get('/contact-list', AuthGuard,  DisplayContactsList);
+// rest of these follow same logic as above. 
+// get will call display functions and post will call process functions to update data on the site
 router.get('/contact-add', AuthGuard, DisplayContactsAddPage)
 router.post('/contact-add', AuthGuard, ProcessContactsAddPage);
 router.get('/contact-update/:id', AuthGuard, DisplayContactsUpdatePage);

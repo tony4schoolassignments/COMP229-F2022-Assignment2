@@ -12,6 +12,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
+// contact object in our database. it has 3 properties: name, number and email address
 const ContactSchema = new Schema({
     name: String,
     number: String,
