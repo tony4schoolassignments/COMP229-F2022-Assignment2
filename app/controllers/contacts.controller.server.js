@@ -22,7 +22,7 @@ export function DisplayContactsList(req, res, next){
 };
 
 export function DisplayContactsAddPage(req, res, next){
-    res.render('index', {title: 'Add Contact', page: 'contacts/update', contact: {}, displayName: userDisplayName(req)});
+    res.render('index', {title: 'Add Contact', page: 'contacts/add', contact: {}, displayName: userDisplayName(req)});
 };
 
 export function ProcessContactsAddPage(req, res, next){
@@ -39,6 +39,7 @@ export function ProcessContactsAddPage(req, res, next){
         res.redirect('/contact-list')
     });
 };
+
 
 export function DisplayContactsUpdatePage(req, res, next){
     let id = req.params.id;
